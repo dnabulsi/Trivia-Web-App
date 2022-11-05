@@ -1,0 +1,131 @@
+body {
+    background-image: url("questionmarks.png");
+    background-repeat: repeat;
+    position: relative;
+    min-height: 100%;
+    min-height: 100vh;
+}
+
+main {
+    position: relative;
+    padding-top: 88px
+    }
+
+header {
+    position: fixed;
+    width: 100%;
+    }
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    text-align: center;
+ }
+
+a {
+    color: green;
+    text-align: center;
+    text-decoration: none;
+  }
+
+a:hover {
+    text-decoration: bold;
+    color: green
+}
+
+.table,
+.table tr,
+.table td {
+    background: rgba(255,255,255,0.7) !important;
+}
+
+.inline {
+    vertical-align: middle;
+}
+
+#text {
+    color: #1a7742;
+    background: rgba(255,255,255,0.7);
+    display: table;
+    margin: 0px auto 0px auto;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#text2 {
+    color: #1a7742;
+    background: rgba(255,255,255,0.7);
+    font-weight: 700;
+    text-align: left;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#header {
+    color: #ab262d;
+    background: rgba(255,255,255,0.7);
+    font-weight: 700;
+    text-align: left;
+    font-size: 32px;
+    border-radius: 5px;
+}
+
+#navbutton {
+    background-color: #1ca73d;
+    border-color: #1ca73d;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#logo {
+    background: white;
+    background-image: url("challengetrivia.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    width:66px;
+    height:43px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.btn {
+    background: #196633;
+    border-color: #196633;
+    font-weight: 500;
+}
+
+#question {
+    color: #1a7742;
+    background: rgba(255,255,255,0.7);
+    display: table;
+    margin: 0px auto 0px auto;
+    padding: 7px;
+    font-size: 36px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+select {
+    width:  180px;
+    height: 25px;
+}
+
+#gameanswerbutton {
+    background: #1a7742;
+    color: rgba(255,255,255,1);
+    display: table;
+    margin: 0px auto 0px auto;
+    font-size: 22px;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}

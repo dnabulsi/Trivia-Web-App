@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <img alt="trivia" src="/static/Riddler-logo.png">
+    </div>
+    <form action="/newgame" method="get" class="mb-3">
+        <button name="button" class="btn btn-success" type="submit">New Game</button>
+    </form>
+    <form action="/howtoplay" method="get" class="mb-3">
+        <button name="button" class="btn btn-success" type="submit">How To Play</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New Game
+{% endblock %}
+
+{% block main %}
+
+    <form action="/newgame" method="post">
+        <div class="mb-3">
+            <img alt="trivia" src="/static/Riddler-logo.png">
+        </div>
+        <div class="mb-3">
+            <p id="text" class="mb-3">↓ Customize your game! ↓</p>
+        </div>
+        <div class="mb-3">
+            <select name="category">
+                <option disabled selected>Category</option>
+                {% for row in categories %}
+                <option value="{{ categories[row] }}">{{ categories[row] }}
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <select name="difficulty">
+                <option disabled selected>Difficulty</option>
+                {% for row in difficulty %}
+                <option value="{{ difficulty[row] }}">{{ difficulty[row] }}
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3"></div>
+        <button class="btn btn-success" type="submit">Start new game!</button>
+    </form>
+{% endblock %}

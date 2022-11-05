@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History of Games
+{% endblock %}
+
+{% block main %}
+<form action="/history" method="post">
+    <div class="inline mb-3">
+        <p id="text" class="mb-2"> Enter the username to check history:</p>
+        <input autocomplete="off" autofocus class="inline" id="username" name="username" placeholder="Username" type="text"> <button class="btn btn-success inline" type="submit">Check history</button>
+        <br>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Score</th>
+            <th scope="col">Difficulty</th>
+            <th scope="col">Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Loop through the lookup function results to display them in this table -->
+        {% for entry in rows %}
+        <tr>
+            <td> {{ entry.time }} </td>
+            <td> {{ entry.score }} </td>
+            <td> {{ entry.difficulty }} </td>
+            <td> {{ entry.category }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

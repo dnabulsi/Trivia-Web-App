@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Answer the Question!
+{% endblock %}
+
+{% block main %}
+    <script>
+        var timeleft = 20;
+        var timer = setInterval(function(){
+            if(timeleft <= 0){
+                clearInterval(timer);
+                document.getElementById('myform').submit();}
+            document.getElementById("progressBar").value = 10 - timeleft;
+            timeleft -= 1;
+            }, 1000);
+    </script>
+    <form action="/game" id="myform" method="post">
+        <div class="mb-3">
+            <p id="text" class="mb-3">↓ Answer the question! ↓</p>
+        </div>
+        <div class="mb-3">
+            <p id="question">{{ question_number }}. {{ lookup_results.question }}</p>
+            <p id="text">Category: {{ proper_category }} | Difficulty: {{ proper_diifficulty }}</p>
+        </div>
+        <progress value="0" max="10" id="progressBar" class="mb-2"></progress>
+        <div>
+            <div class="mb-3" id="gameanswerbutton">
+                <input name="answer" type="radio" value="{{ answers[0] }}"> A) {{ answers[0] }}
+            </div>
+            <div class="mb-3" id="gameanswerbutton">
+                <input name="answer" type="radio" value="{{ answers[1] }}"> B) {{ answers[1] }}
+            </div>
+            <div class="mb-3" id="gameanswerbutton">
+                <input name="answer" type="radio" value="{{ answers[2] }}"> C) {{ answers[2] }}
+            </div>
+            <div class="mb-2" id="gameanswerbutton">
+                <input name="answer" type="radio" value="{{ answers[3] }}"> D) {{ answers[3] }}
+            </div>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success" id="sbmtbutton" onclick="clearInterval(timer);this.disabled=true;this.form.submit()">Submit Answer</button>
+            <p id="text">Current points: {{ points }}</p>
+        </div>
+    </form>
+{% endblock %}
